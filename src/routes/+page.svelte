@@ -3,7 +3,7 @@
 
     <header class="site clearfix">
       <div class="col one">
-        <img src="/favicon.svg" alt="591 Systems" width="740" height="729" id="logo-v" class="z-10" />
+        <img src="/favicon.svg" alt="Hack Club Systems" width="740" height="729" id="logo-v" class="z-10" />
       </div>
       <div class="col two">
         <h4>Hack Club Systems (tm) <br /> <b>A</b>utomated <b>R</b>eview <b>M</b>ethods (ARM)</h4>
