@@ -315,12 +315,12 @@ a.button:hover {
 		align-items: center;
 		z-index: 9999;
 		font-family: 'VT323', monospace;
-		font-size: 1.5em;
+		font-size: 2em;
 		text-align: center;
 		padding: 2rem;
 	}
 
-.epilepsy-warning button {
+.epilepsy-warning .buttonProceed {
     margin-top: 1rem;
     padding: 0.5rem 1rem;
     background: transparent;
@@ -330,9 +330,63 @@ a.button:hover {
     font-size: 1.2em;
     cursor: pointer;
     text-transform: uppercase;
+    padding-left: 3.4rem;
+    padding-right: 3.4rem;
 }
 
-.epilepsy-warning button:hover {
+.epilepsy-warning .buttonProceed:hover {
     background: #de0491;
     color: black;
+}
+
+.epilepsy-warning .buttonSafe {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 2px solid #0b1161;
+    color: #0b1161;
+    font-family: 'VT323', monospace;
+    font-size: 1.2em;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.epilepsy-warning .buttonSafe:hover {
+    background: #0b1161;
+    color: black;
+}
+
+.overlayES {
+  height: 1px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+}
+
+.overlayES:before {
+  background: linear-gradient(#101010 50%, rgba(16, 16, 16, 0.2) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.03));
+  background-size: 100% 3px, 6px 100%;
+  content: "";
+  display: block;
+  pointer-events: none;
+  position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  z-index: 2;
+}
+
+.overlayES:after {
+  background: rgba(16, 16, 16, 0.2);
+  content: "";
+  display: block;
+  pointer-events: none;
+  position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  z-index: 2;
 }
