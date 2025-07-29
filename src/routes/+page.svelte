@@ -3,7 +3,7 @@
 
     <header class="site clearfix">
       <div class="col one">
-        <img src="https://assets.codepen.io/2856/Logo_591Design_2015-12-01.png" alt="591 Systems" width="740" height="729" id="logo-v" />
+        <img src="/favicon.svg" alt="591 Systems" width="740" height="729" id="logo-v" class="z-10" />
       </div>
       <div class="col two">
         <h4>Hack Club Systems (tm) <br /> <b>A</b>utomated <b>R</b>eview <b>M</b>ethods (ARM)</h4>
@@ -19,6 +19,7 @@
         <li><a href="/gallery" title="">Project Gallery</a></li>
         <li><a href="/assembly_guide" title="">Learn Assembly</a></li>
         <li><a href="/submit_project" title="">Submit your Project!</a></li>
+        <li><a href="/prizes" title="">Prizes</a></li>
       </ul>
     </nav>
 
