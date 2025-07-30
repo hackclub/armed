@@ -5,7 +5,7 @@
 
 	let epilepsyWarning = $state(true);
 	let epilepsySafeMode = $state(false);
-
+	
 	function epilepsyWarningDismiss() {
 		epilepsyWarning = false;
 	}

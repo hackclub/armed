@@ -1,4 +1,9 @@
 <!-- Style from https://codepen.io/macktropolis/details/vNMRpK credits to Mack Richardson, used under MIT License -->
+  
+<script>
+  let content = $state('');
+<script>
+
   <div class="content clearfix">
 
     <header class="site clearfix">
@@ -25,6 +30,9 @@
 
     <p>System Administrator Integrated Message System (SAIMS)</p>
     <p>System Administrator (SYSADM) - Alex Van Doren</p>
-
     <p class="clear"><br /></p>
+    {@html content}
+    <form>
+      
+    </form>
   </div>

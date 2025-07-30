@@ -287,7 +287,7 @@ a.button:hover {
     left: 0;
     right: 0;
     top: -5%;
-  z-index: 2;
+  z-index: 10;
 }
 
 .clear {
@@ -330,8 +330,7 @@ a.button:hover {
     font-size: 1.2em;
     cursor: pointer;
     text-transform: uppercase;
-    padding-left: 3.4rem;
-    padding-right: 3.4rem;
+    width: 60%;
 }
 
 .epilepsy-warning .buttonProceed:hover {
@@ -349,6 +348,7 @@ a.button:hover {
     font-size: 1.2em;
     cursor: pointer;
     text-transform: uppercase;
+    width: 60%;
 }
 
 .epilepsy-warning .buttonSafe:hover {
