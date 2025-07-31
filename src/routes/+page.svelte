@@ -2,7 +2,7 @@
   
 <script>
   let content = $state('');
-<script>
+</script>
 
   <div class="content clearfix">
 
@@ -10,8 +10,8 @@
       <div class="col one">
         <img src="/favicon.svg" alt="Hack Club Systems" width="740" height="729" id="logo-v" class="z-10" />
       </div>
-      <div class="col two">
-        <h4>Hack Club Systems (tm) <br /> <b>A</b>utomated <b>R</b>eview <b>M</b>ethods (ARM)</h4>
+      <div class="col two" style="width: auto;">
+        <h4>Hack Club Systems (tm) <br /> <b>a</b>utomated <b>r</b>eview <b>m</b>ethods |<img src="/armlogo.svg" alt="ARM Logo" width="60" height="auto" id="logo-h" class="z-10 -translate-y-0.5" style="vertical-align: middle; display: inline; padding-left: 5px;" /></h4>
         <p>----------------------------------------</p>
         <p>ARM v 2.0.0</p>
         <p>(c)2025 Hack Club 501(c)(3) nonprofit EIN: 81-2908499</p>
@@ -21,10 +21,11 @@
 
     <nav class="site clear">
       <ul>
-        <li><a href="/gallery" title="">Project Gallery</a></li>
+        <!--<li><a href="/gallery" title="">Project Gallery</a></li>-->
         <li><a href="/assembly_guide" title="">Learn Assembly</a></li>
-        <li><a href="/submit_project" title="">Submit your Project!</a></li>
         <li><a href="/prizes" title="">Prizes</a></li>
+        <li><a href="https://peterhigginson.co.uk/ARMlite" title="">Try it Out!</a></li>
+        <li><a href="/submit_project" title="">Submit your Project!</a></li>
       </ul>
     </nav>
 
