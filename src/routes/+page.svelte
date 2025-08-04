@@ -23,9 +23,9 @@
       <ul>
         <!--<li><a href="/gallery" title="">Project Gallery</a></li>-->
         <li><a href="/assembly_guide" title="">Learn Assembly</a></li>
-        <li><a href="/prizes" title="">Prizes</a></li>
-        <li><a href="https://peterhigginson.co.uk/ARMlite" title="">Try it Out!</a></li>
+        <li><a href="/editor" title="">Try it Out!</a></li>
         <li><a href="/submit_project" title="">Submit your Project!</a></li>
+        <li><a href="/prizes" title="">Prizes</a></li>
       </ul>
     </nav>
 
@@ -33,7 +33,4 @@
     <p>System Administrator (SYSADM) - Alex Van Doren</p>
     <p class="clear"><br /></p>
     {@html content}
-    <form>
-      
-    </form>
   </div>
