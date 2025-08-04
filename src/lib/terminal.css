@@ -92,6 +92,10 @@ p {
 
 span { animation: blink 1s infinite }
 
+.no-blink {
+  animation: none !important;
+}
+
 ul {
   list-style: none;
 }
