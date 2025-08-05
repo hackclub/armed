@@ -33,19 +33,23 @@
             </p>`,
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             Wait, but that's interesting, I thought that the Memory was where my variable data was stored?
+            </p>`,
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             Well yes it is, but modern computers follow the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Von Neumann</b> architecture,
             which means that the program code is stored in the same memory as the data,
             and is not physically seperate in any way.
-            </p>`,
+        </p>`,
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             This architecture is helpful due to its <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">simplicity</b> 
             and <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">efficiency</b>,
             as it allows the CPU to access both the program code and data from the same memory space
             without needing to switch between different memory areas.
+        </p>`,
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             However, it also means that downloaded data can be executed as code,
             which can lead to <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">security vulnerabilities</b>
-             if not handled properly.
-            </p>`,
+            if not handled properly.
+        </p>`,
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             But going back, the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">
                 LR</b> is the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Link Register</b>
@@ -59,8 +63,24 @@
         
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             The <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Program Editor</b> is where you write your code,
-            it's where you'll be spending most of your time.
+            it's where you'll be spending most of your time. To edit, scroll down in the window and click <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Edit</b>
         </p>`,
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+            To start us off we're going to look at the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">MOV</b>
+            instruction.
+            `,
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+            <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">MOV</b> is used to
+            assign values to registers, for example
+            <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">MOV R0, 5</b>
+            will assign the value <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">5</b> to 
+            the register <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">R0</b>. Enter that into the editor.</p>`,
+
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+            Now, if you press <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">submit</b>, press <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">play</b>, 
+            and look at the registers, you'll see that <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">R0</b>
+            now has <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">5</b> in it.-- It may be in binary or hex, 
+            you can change this in the bottom right.</p> `,
     ];
 
     function nextStep() {
