@@ -49,7 +49,7 @@
             However, it also means that downloaded data can be executed as code,
             which can lead to <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">security vulnerabilities</b>
             if not handled properly.
-        </p>`,
+            </p>`,
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             But going back, the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">
                 LR</b> is the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Link Register</b>
@@ -59,28 +59,33 @@
             And the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">
                 SP</b> is the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Stack Pointer</b>
                 which points to the top of the CPU's function call stack that consists of stack frames.
-        </p>`,
+            </p>`,
         
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             The <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Program Editor</b> is where you write your code,
             it's where you'll be spending most of your time. To edit, scroll down in the window and click <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Edit</b>
-        </p>`,
+            </p>`,
+        
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             To start us off we're going to look at the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">MOV</b>
             instruction.
-            `,
+            </p>`,
+
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">MOV</b> is used to
             assign values to registers, for example
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">MOV R0, 5</b>
             will assign the value <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">5</b> to 
-            the register <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">R0</b>. Enter that into the editor.</p>`,
+            the register <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">R0</b>. 
+            Enter that into the editor.
+            </p>`,
 
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             Now, if you press <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">submit</b>, press <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">play</b>, 
             and look at the registers, you'll see that <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">R0</b>
             now has <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">5</b> in it.-- It may be in binary or hex, 
-            you can change this in the bottom right.</p> `,
+            you can change this in the bottom right.
+            </p> `,
         
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             Now, let's look at the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">ADD</b> instruction.
@@ -90,7 +95,8 @@
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">5</b> and store the result in 
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">R0</b>.
             Add that into the editor, and your result in <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">R0</b> 
-            should be <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">10</b>.</p>`,
+            should be <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">10</b>.
+            </p>`,
 
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             Likewise <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">SUB</b> is used to subtract two values,
@@ -99,9 +105,13 @@
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">R0</b> and store the result in 
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">R0</b>.
             Add that into the editor, and your end result will now be 
-            <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">5</b> again.</p>`,
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">Finally we're going to look at branching
-            and selection statements.</p>`,
+            <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">5</b> again.
+            </p>`,
+
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+            Lastly, we're going to look at branching
+            and selection statements.
+            </p>`,
         
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             Branching is done using the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">B</b> instruction,
@@ -117,11 +127,22 @@
             and <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">BNE</b> (branch if not equal).
             These instructions check the status of the zero flag, which is set by previous arithmetic operations.
             For example, <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">BEQ LABEL</b> will jump to <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">LABEL</b>
-            if the zero flag is set, indicating that the last comparison was equal.</p>`,
+            if the zero flag is set, indicating that the last comparison was equal.
+            </p>`,
+
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+            Finally, you can save your project as a .txt file by 
+            clicking the <b class="text-stone-300 drop-shadow-stone-500
+             drop-shadow-xl">Save</b> button, and you can load 
+             it back by clicking the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Load</b> button.
+             To <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Submit</b> your project, you'll
+             need to upload one of these <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">.txt</b> files.
+            </p>`,
 
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             And that's it for the basics, 
-            we're now going to move on to some more advanced stuff</p>`
+            we're now going to move on to some more advanced stuff
+            </p>`
     ];
 
     function nextStep() {
