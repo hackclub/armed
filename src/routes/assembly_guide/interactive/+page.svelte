@@ -81,6 +81,47 @@
             and look at the registers, you'll see that <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">R0</b>
             now has <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">5</b> in it.-- It may be in binary or hex, 
             you can change this in the bottom right.</p> `,
+        
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+            Now, let's look at the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">ADD</b> instruction.
+            <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">ADD</b> is used to add two values together,
+            for example <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">ADD R0, R0, 5</b>
+            will add the value in <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">R0</b> to 
+            <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">5</b> and store the result in 
+            <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">R0</b>.
+            Add that into the editor, and your result in <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">R0</b> 
+            should be <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">10</b>.</p>`,
+
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+            Likewise <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">SUB</b> is used to subtract two values,
+            for example <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">SUB R0, R0, 5</b>
+            will subtract the value in <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">5</b> from 
+            <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">R0</b> and store the result in 
+            <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">R0</b>.
+            Add that into the editor, and your end result will now be 
+            <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">5</b> again.</p>`,
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">Finally we're going to look at branching
+            and selection statements.</p>`,
+        
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+            Branching is done using the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">B</b> instruction,
+            which stands for branch.
+            It allows you to jump to a different part of your code based on a condition.
+            For example, <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">B LABEL</b> will jump to the line labelled <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">LABEL</b>.
+            You can create a label by writing <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">LABEL:</b> on a new line.
+            </p>`,
+        
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+            You can also use conditional branching with instructions like 
+            <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">BEQ</b> (branch if equal) 
+            and <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">BNE</b> (branch if not equal).
+            These instructions check the status of the zero flag, which is set by previous arithmetic operations.
+            For example, <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">BEQ LABEL</b> will jump to <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">LABEL</b>
+            if the zero flag is set, indicating that the last comparison was equal.</p>`,
+
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+            And that's it for the basics, 
+            we're now going to move on to some more advanced stuff</p>`
     ];
 
     function nextStep() {
@@ -144,11 +185,11 @@
                 Next
             </button>
             {:else}
-            <a href="/">
+            <a href="/assembly_guide/interactive/advanced">
                 <button 
                     class="px-6 py-2 text-fuchsia-600  hover:bg-fuchsia-600 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                    Home
+                    Continue
                 </button>
             </a>
             {/if}
