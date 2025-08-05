@@ -5,60 +5,73 @@
          `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl"> To start us off,
              this is the editor we'll be using, 
              it's called <a href="https://peterhigginson.co.uk/ARMlite/" 
-             class="p hover:underline hover:text-fuchsia-800">ArmLite</a> </p>`,
+             class="p hover:underline hover:text-fuchsia-800">ArmLite</a> 
+             </p>`,
+
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl"> There are a few main 
             parts of the editor, in the middle are 
             the registers, labelled R0-R12, to the right is the memory, 
-            and to the left is the program editor.</p>`,
+            and to the left is the program editor.
+            </p>`,
+            
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             Think of the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">registers</b> as the CPU's workspace,
             they hold the data that the CPU is currently working on,
             and can be used to hold temporary values.
-        </p>`,
+            </p>`,
+
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             In contrast, the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Memory</b> is like the notes app of the CPU,
             it holds data that the CPU doesn't need right now,
             and can be used to store larger amounts of data,
             such as complex variables that aren't currently in use.
-        </p>`,
+            </p>`,
+
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             You also might have noticed a few unusual registers, like the ones labelled
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">PC</b>, 
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">LR</b>, and 
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">SP</b>.
             </p>`,
+
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">PC</b> stands for the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Program Counter</b>,
             it holds the address of the next instruction to be executed
             </p>`,
+
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             Wait, but that's interesting, I thought that the Memory was where my variable data was stored?
             </p>`,
+
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             Well yes it is, but modern computers follow the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Von Neumann</b> architecture,
             which means that the program code is stored in the same memory as the data,
             and is not physically seperate in any way.
-        </p>`,
+            </p>`,
+
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             This architecture is helpful due to its <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">simplicity</b> 
             and <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">efficiency</b>,
             as it allows the CPU to access both the program code and data from the same memory space
             without needing to switch between different memory areas.
-        </p>`,
+            </p>`,
+
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             However, it also means that downloaded data can be executed as code,
             which can lead to <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">security vulnerabilities</b>
             if not handled properly.
             </p>`,
+
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             But going back, the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">
-                LR</b> is the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Link Register</b>
-                which holds the return address for function calls.
-        </p>`,
+            LR</b> is the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Link Register</b>
+            which holds the return address for function calls.
+            </p>`,
+
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             And the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">
-                SP</b> is the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Stack Pointer</b>
-                which points to the top of the CPU's function call stack that consists of stack frames.
+            SP</b> is the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Stack Pointer</b>
+            which points to the top of the CPU's function call stack that consists of stack frames.
             </p>`,
         
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
@@ -206,6 +219,13 @@
                 Next
             </button>
             {:else}
+            <a href="/">
+                <button 
+                    class="opacity-60 px-6 py-2 text-fuchsia-600  hover:bg-fuchsia-600 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                    Give Up
+                </button>
+            </a>
             <a href="/assembly_guide/interactive/advanced">
                 <button 
                     class="px-6 py-2 text-fuchsia-600  hover:bg-fuchsia-600 hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
