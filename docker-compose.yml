@@ -9,7 +9,7 @@ services:
       - HOST=0.0.0.0
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "node", "--version", ""]
+      test: ["CMD", "node", "--version",]
       interval: 30s
       timeout: 10s
       retries: 3
