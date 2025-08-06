@@ -23,6 +23,30 @@ npm run check
 
 The app is configured with `@sveltejs/adapter-auto` which automatically detects the deployment environment and configures accordingly.
 
+### Using Docker
+
+**Build and run:**
+```bash
+# Build the Docker image
+docker build -t armed-app .
+
+# Run the container
+docker run -p 3000:3000 \
+  -e AUTH_SECRET=your_secret \
+  -e AUTH_SLACK_ID=your_slack_id \
+  -e AUTH_SLACK_SECRET=your_slack_secret \
+  armed-app
+```
+
+**Or use Docker Compose:**
+```bash
+# Create .env file with your variables
+cp .env.example .env
+
+# Start the application
+docker-compose up -d
+```
+
 ### Environment Variables
 
 Copy `.env.example` to `.env` and set:
