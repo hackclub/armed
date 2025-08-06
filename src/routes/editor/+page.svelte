@@ -35,7 +35,7 @@
         ></iframe>
          </div>
         {:else}
-        <div class="w-full max-w-8xl h-[1000px] relative z-20">
+        <div class="w-full max-w-8xl h-[900px] relative z-20">
         <iframe 
             src="https://peterhigginson.co.uk/ARMlite/" 
             class="w-full h-full border-2 border-fuchsia-800 rounded-lg relative z-30" 
