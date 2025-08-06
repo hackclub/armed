@@ -8,7 +8,7 @@
 
     <header class="site clearfix">
       <div class="col one">
-        <img src="/favicon.svg" alt="Hack Club Systems" width="740" height="729" id="logo-v" class="z-10" />
+        <img src="/favicon.png" alt="Hack Club Systems" width="740" height="729" id="logo-v" class="z-10" />
       </div>
       <div class="col two" style="width: auto;">
         <h4>Hack Club Systems (tm) <br /> <b>a</b>utomated <b>r</b>eview <b>m</b>ethods |<img src="/armlogo.svg" alt="ARM Logo" width="60" height="auto" id="logo-h" class="z-10 -translate-y-0.5" style="vertical-align: middle; display: inline; padding-left: 5px;" /></h4>
