@@ -99,13 +99,14 @@
             {@html steps[currentStep]}
         </div>
 
-        <div class="w-full max-w-4xl h-[525px]">
+        <div class="w-full max-w-7xl h-[700px]">
             <iframe 
                 src="https://peterhigginson.co.uk/ARMlite/" 
                 class="w-full h-full border-2 border-fuchsia-800 rounded-lg" 
                 title="ArmLite"
                 allow="fullscreen"
                 loading="lazy"
+                style="transform-origin: 0 0; transform: scale(0.9); width: 111%; height: 111%;"
             ></iframe>
         </div>
         
