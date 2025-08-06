@@ -14,7 +14,7 @@
 
     function checkWindowSize() {
         if (typeof window !== 'undefined') {
-            mobileDevice = window.innerWidth <= 768;
+            mobileDevice = window.innerWidth <= 1486;
         }
     }
 
@@ -39,21 +39,27 @@
 
 </script>
 
-{#if epilepsyWarning}
+{#if mobileDevice}
 	<div class="epilepsy-warning">
-		<p><b>Warning:</b> <u>This site contains flashing images that may trigger seizures for people with photosensitive epilepsy. Proceed with caution.</u></p>
-		<button onclick={epilepsyWarningDismiss} class="buttonProceed">I understand, proceed</button>
-		<button onclick={EpilepsySafeMode} class="buttonSafe">Turn on Epilepsy Safe Mode</button>
+		<p><b>Warning:</b> <u>This site is not optimized for mobile devices. For the best experience, please use a desktop or laptop computer.</u></p>
 	</div>
 {:else}
-	{#if epilepsySafeMode}
-		<div class="overlayES" style="z-index: 0"></div>
-		<div class="scanline" style="z-index: 0"></div>
+	{#if epilepsyWarning}
+		<div class="epilepsy-warning">
+			<p><b>Warning:</b> <u>This site contains flashing images that may trigger seizures for people with photosensitive epilepsy. Proceed with caution.</u></p>
+			<button onclick={epilepsyWarningDismiss} class="buttonProceed">I understand, proceed</button>
+			<button onclick={EpilepsySafeMode} class="buttonSafe">Turn on Epilepsy Safe Mode</button>
+		</div>
 	{:else}
-		<div class="overlay" style="z-index: 0"></div>
-		<div class="scanline" style="z-index: 0"></div>
+		{#if epilepsySafeMode}
+			<div class="overlayES" style="z-index: 0"></div>
+			<div class="scanline" style="z-index: 0"></div>
+		{:else}
+			<div class="overlay" style="z-index: 0"></div>
+			<div class="scanline" style="z-index: 0"></div>
+		{/if}
+		<div class="wrapper">
+			{@render children()}
+		</div>
 	{/if}
-	<div class="wrapper">
-		{@render children()}
-	</div>
 {/if}
