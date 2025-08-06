@@ -13,7 +13,7 @@ FROM base AS build-deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 COPY package.json package-lock.json* ./
-RUN npm ci && npm cache clean --force
+##RUN npm ci && npm cache clean --force
 
 # Build the application
 FROM base AS builder
