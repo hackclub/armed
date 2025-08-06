@@ -27,6 +27,7 @@ RUN if [ -d "/app/build" ]; then ls -la /app/build/; fi
 
 # Production image, copy all the files and run the app
 FROM base AS runner
+RUN apk add --no-cache wget
 WORKDIR /app
 
 # Create a non-root user
