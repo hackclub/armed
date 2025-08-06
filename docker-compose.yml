@@ -9,10 +9,6 @@ services:
       - NODE_ENV=production
       - PORT=3000
       - HOST=0.0.0.0
-      # Add your environment variables here
-      - AUTH_SECRET=${AUTH_SECRET}
-      - AUTH_SLACK_ID=${AUTH_SLACK_ID}
-      - AUTH_SLACK_SECRET=${AUTH_SLACK_SECRET}
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "node", "--version"]
