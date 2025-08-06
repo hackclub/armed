@@ -1,25 +1,25 @@
 # Use Node.js 24 as base image
 FROM node:24-alpine AS base
 
-# Install dependencies only when needed
+# Install production dependencies
 FROM base AS deps
-# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine
-# to understand why libc6-compat might be needed.
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
-
-# Copy package files
 COPY package.json package-lock.json* ./
-# Install dependencies
 RUN npm ci --only=production && npm cache clean --force
 
-# Rebuild the source code only when needed
-FROM base AS builder
+# Install all dependencies (including devDependencies for build)
+FROM base AS build-deps
+RUN apk add --no-cache libc6-compat
 WORKDIR /app
-COPY --from=deps /app/node_modules ./node_modules
-COPY . .
+COPY package.json package-lock.json* ./
+RUN npm ci && npm cache clean --force
 
 # Build the application
+FROM base AS builder
+WORKDIR /app
+COPY --from=build-deps /app/node_modules ./node_modules
+COPY . .
 RUN npm run build
 
 # Production image, copy all the files and run the app
