@@ -1,19 +1,41 @@
 <script lang="ts">
 	import '../app.css';
 	import '../lib/terminal.css';
+	import { onMount } from 'svelte';
 	let { children } = $props();
 
 	let epilepsyWarning = $state(true);
 	let epilepsySafeMode = $state(false);
+    let mobileDevice = $state(false);
 	
 	function epilepsyWarningDismiss() {
 		epilepsyWarning = false;
 	}
 
+    function checkWindowSize() {
+        if (typeof window !== 'undefined') {
+            mobileDevice = window.innerWidth <= 768;
+        }
+    }
+
 	function EpilepsySafeMode() {
 		epilepsyWarning = false;
 		epilepsySafeMode = true;
 	}
+
+    onMount(() => {
+        // Check window size on initial load
+        checkWindowSize();
+        
+        // Add event listener to check window size on resize
+        const handleResize = () => checkWindowSize();
+        window.addEventListener('resize', handleResize);
+        
+        // Cleanup event listener on component destroy
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    });
 
 </script>
 
