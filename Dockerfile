@@ -21,6 +21,9 @@ WORKDIR /app
 COPY --from=build-deps /app/node_modules ./node_modules
 COPY . .
 RUN npm run build
+# Debug: List what was created
+RUN ls -la /app/
+RUN if [ -d "/app/build" ]; then ls -la /app/build/; fi
 
 # Production image, copy all the files and run the app
 FROM base AS runner
@@ -30,7 +33,7 @@ WORKDIR /app
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 sveltekit
 
-# Copy the built application
+# Copy the built application and package.json
 COPY --from=builder --chown=sveltekit:nodejs /app/build ./build
 COPY --from=builder --chown=sveltekit:nodejs /app/package.json ./package.json
 COPY --from=deps --chown=sveltekit:nodejs /app/node_modules ./node_modules
