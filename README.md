@@ -1,38 +1,62 @@
-# sv
+# ARMED - Assembly Guide App
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A SvelteKit application for learning ARM assembly programming with interactive guides and editor.
 
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
+## 🚀 Development
 
 ```bash
-# create a new project in the current directory
-npx sv create
+# Install dependencies
+npm install
 
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
+# Start development server
 npm run dev
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+# Run type checking
+npm run check
 ```
 
-## Building
+## 🏗️ Building for Production
 
-To create a production version of your app:
+### Using Nixpacks (Coolify)
 
-```bash
-npm run build
+**Build Command:** `npm run build`
+
+The app is configured with `@sveltejs/adapter-auto` which automatically detects the deployment environment and configures accordingly.
+
+### Environment Variables
+
+Copy `.env.example` to `.env` and set:
+
+```env
+AUTH_SECRET=your_secure_random_32_character_secret
+AUTH_SLACK_ID=your_slack_client_id
+AUTH_SLACK_SECRET=your_slack_client_secret
 ```
 
-You can preview the production build with `npm run preview`.
+### Slack OAuth Setup
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+1. Create a Slack app at https://api.slack.com/apps
+2. Set OAuth callback URL to: `https://your-domain.com/auth/callback/slack`
+3. Add OAuth scopes: `openid`, `profile`, `email`
+4. Copy Client ID and Secret to environment variables
+
+## 📁 Project Structure
+
+- `/src/routes/` - SvelteKit file-based routing
+- `/src/routes/editor/` - ARM assembly editor with auth & stopwatch
+- `/src/routes/assembly_guide/` - Interactive assembly tutorials
+- `/src/auth.ts` - Authentication configuration
+- `/static/` - Static assets
+
+## 🔐 Authentication
+
+Uses Auth.js with Slack OAuth provider. Features:
+- Sign in with Slack
+- Session management
+- Integrated stopwatch for coding sessions
+
+## 🎨 Styling
+
+- TailwindCSS 4.x with typography plugin
+- Retro terminal aesthetic with scan line effects
+- Custom fuchsia color scheme
