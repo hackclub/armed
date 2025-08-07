@@ -11,7 +11,7 @@
             [ Home ]
         </button>
     </a>
-    <a href="/submit">
+    <a href="https://matais.me/nsfw/">
         <button class="absolute top-5 left-10 hover:underline">
             [ Submit ]
         </button>
