@@ -177,7 +177,7 @@
                     </div>
                 </div>
                 
-                <h1 class="mt-2 underline text-sm">Remember to Save your code as a .txt file using the save button, also screenshot the page and it's timer</h1>
+                <h1 class="mt-2 underline text-xl text-white">Remember to Save your code as a .txt file using the save button, also screenshot the page and it's timer</h1>
             </div>
         </div>
     {/if}
