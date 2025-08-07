@@ -1,5 +1,64 @@
-<script>
+<script lang="ts">
+    import { onMount } from 'svelte';
+    
     let easyMode = $state(false);
+    let tutorial = $state(false);
+    let showTutorial = $state(false);
+    let currentTutorialStep = $state("");
+
+    const Steps = [
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+            Welcome to the ARM Assembly Editor! This guide will help you get started.
+        </p>`,
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+            First, let's load a sample project. Type <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">demo</b> into the editor and press <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Submit</b>.
+        </p>`,
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+            This will load a project that demonstrates various ARM Assembly concepts.
+        </p>`,
+    ];
+
+    function completeTutorial() {
+        tutorial = true;
+        markTutorialCompleted();
+    }
+
+    // Cookie functions
+    function setCookie(name: string, value: string, days: number = 365) {
+        const expires = new Date();
+        expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+        document.cookie = `${name}=${value}; expires=${expires.toUTCString()}; path=/; SameSite=Strict`;
+    }
+
+    function getCookie(name: string): string | null {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    function hasCompletedTutorial(): boolean {
+        const completed = getCookie('tutorialCompleted');
+        return completed === 'true';
+    }
+
+    function markTutorialCompleted() {
+        setCookie('tutorialCompleted', 'true');
+        showTutorial = false;
+    }
+
+    function shouldShowTutorial(): boolean {
+        return !hasCompletedTutorial();
+    }
+
+    // Initialize tutorial state on mount
+    onMount(() => {
+        showTutorial = shouldShowTutorial();
+    });
 
     function toggleEasyMode() {
         easyMode = !easyMode;
@@ -81,9 +140,44 @@
         stopwatch.reset();
         displayTime = stopwatch.getFormattedTime();
     }
+
+    function handleKeydown(event: KeyboardEvent) {
+        console.log("Key pressed:", event.key);
+        // Add your keydown logic here
+        if (event.key === ' ') { // Spacebar example
+            event.preventDefault();
+            if (stopwatch.isActive()) {
+                stopStopwatch();
+            } else {
+                startStopwatch();
+            }
+        } else if (event.key === 'r' || event.key === 'R') {
+            event.preventDefault();
+            resetStopwatch();
+        }
+    }
+
+    function handleIframeKeydown(event: KeyboardEvent) {
+        // Forward keydown events to the parent div
+        const parentDiv = document.querySelector('div[role="application"]');
+        if (parentDiv) {
+            parentDiv.dispatchEvent(new KeyboardEvent('keydown', event));
+        }
+    }
 </script>
-<div class="min-h-screen flex justify-center items-center p-8 relative z-10">
-    {#if easyMode}
+
+<div class="min-h-screen flex justify-center items-center p-8 relative z-10" onkeydown={handleKeydown} tabindex="0" role="application" aria-label="ARM Assembly Editor">
+    {#if showTutorial}
+        <!-- Tutorial placeholder -->
+        <div class="text-center">
+            <h1 class="text-4xl text-fuchsia-600 mb-4">New Hackatime Extension Required</h1>
+            <p class="text-white mb-4">Please complete this guide on how to install and configure it before using the editor.</p>
+            <button onclick={completeTutorial} class="absolute top-5 right-20 px-6 py-2 text-fuchsia-600 hover:text-white rounded hover:underline">
+                Skip Guide
+            </button>
+        </div>
+    {:else}
+        {#if easyMode}
         <div class="w-full max-w-4xl relative z-20">
             <iframe 
                 src="https://www.peterhigginson.co.uk/AQA/?F5=06-Aug-25_17:58:56" 
@@ -128,7 +222,7 @@
                     </div>
 
 
-                <h1 class="mt-2 underline text-m justify-center">Remember to Save your code as a .txt file using the save button, also screenshot the page and it's timer</h1>
+                <h1 class="mt-2 underline text-m justify-center">Remember to Save your code as a .txt file using the save button and screenshot the page</h1>
                 </div>
             </div>
         </div>
@@ -140,6 +234,8 @@
                 title="ArmLite"
                 allow="fullscreen"
                 loading="lazy"
+                onkeydown={handleIframeKeydown}
+                role="editor"
             ></iframe>
             
             <!-- Buttons positioned below iframe container -->
@@ -177,8 +273,9 @@
                     </div>
                 </div>
                 
-                <h1 class="mt-2 underline text-xl text-white">Remember to Save your code as a .txt file using the save button, also screenshot the page and it's timer</h1>
+                <h1 class="mt-2 underline text-xl text-white">Remember to Save your code as a .txt file using the save button and screenshot the page</h1>
             </div>
         </div>
+        {/if}
     {/if}
 </div>
