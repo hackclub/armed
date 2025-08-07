@@ -93,23 +93,23 @@
             [ Submit ]
         </button>
     </a>
-    <button class="absolute top-5 right-80 hover:underline" onclick={toggleEasyMode}>
+    <button class="absolute top-5 right-40 hover:underline" onclick={toggleEasyMode}>
         {easyMode ? '[ Hard Mode ]' : '[ Easy Mode ]'}
     </button>
-    <h1 class="absolute top-5 justify-center">Remember to Save your code as a .txt file using the save button</h1>
-    <div>{displayTime}</div>
-    <button onclick={startStopwatch}>Start</button>
-    <button onclick={stopStopwatch}>Stop</button>
-    <button onclick={resetStopwatch}>Reset</button>
+    <h1 class="absolute top-5 left-100 underline">Remember to Save your code as a .txt file using the save button, also screenshot the page and it's timer</h1>
+    <div class="absolute top-5 right-150 text-white">{displayTime}</div>
+    <button onclick={startStopwatch} class= "absolute top-5 right-125 hover:underline hover:text-white">[ Start ]</button>
+    <button onclick={stopStopwatch} class= "absolute top-5 right-100 hover:underline hover:text-white">[ Stop ]</button>
+    <button onclick={resetStopwatch} class= "absolute top-5 right-75 hover:underline hover:text-red-500">[ Reset ]</button>
     {#if !easyMode}
         <a href="https://peterhigginson.co.uk/ARMlite/Programming%20reference%20manual_v1_3.pdf">
-            <button class="absolute top-5 left-80 hover:underline">
+            <button class="absolute top-5 left-40 hover:underline">
                 [ Instructionset Guide ]
             </button>
         </a>
     {:else}
         <a href="https://pmt.physicsandmathstutor.com/download/Computer-Science/A-level/Past-Papers/AQA/AS-Paper-2/Assembly%20Language%20Instruction%20-%20Paper%202%20AQA%20Computer%20Science%20AS-level.pdf">
-            <button class="absolute top-5 left-80 hover:underline">
+            <button class="absolute top-5 left-40 hover:underline">
                 [ Instructionset Guide ]
             </button>
         </a>
