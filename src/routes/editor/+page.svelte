@@ -136,7 +136,7 @@
         <div class="w-full max-w-8xl relative z-20">
             <iframe 
                 src="https://peterhigginson.co.uk/ARMlite/" 
-                class="w-full h-[900px] border-2 border-fuchsia-800 rounded-lg relative z-30" 
+                class="w-full h-[800px] border-2 border-fuchsia-800 rounded-lg relative z-30" 
                 title="ArmLite"
                 allow="fullscreen"
                 loading="lazy"
