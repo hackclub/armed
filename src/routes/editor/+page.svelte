@@ -134,9 +134,31 @@
     const steps = [
         `<h1 class="text-4xl  mb-4">New Hackatime Setup Required</h1>
             <p class="text-white mb-4">Please install and configure it before using the editor.</p>`,
+        `<h1 class="text-4xl mb-4">This guide assumes you have Hackatime setup</h1>
+            <p class="text-white mb-4">If you don't have it setup, click <a href="https://hackatime.hackclub.com/">here</a></p>`,
          `<h1 class="text-4xl mb-4">You need to install the </h1><p><a href="https://wakatime.com/chrome" class="text-fuchsia-400 hover:underline"> Wakatime Browser extension. </a> </p>`,
         `<h1 class="text-4xl mb-4">After installing the extension, you need to configure it.</h1>
-            <p class="text-white mb-4">Click the extensions button, and then click the wakatime icon.</p>`,
+            <p class="text-white mb-4">Click the extensions button, and then click the wakatime icon.</p>
+            <div class="flex justify-center gap-4 mb-4 mt-4">
+                <img src="/extensions.png" alt="Extensions" class="rounded-2xl" style="max-width: 300px;" />
+                <p class="transform translate-y-20">-></p>
+                <img src="/wakaext.png" alt="Wakatime" class="rounded-2xl" style="max-width: 600px;" />
+            </div>`,
+        `<h1 class="text-4xl mb-4">Open up the options menu.</h1>
+        <img src="/wakamenu.png" alt="Extensions" class="rounded-2xl mt-4" style="max-width: 300px;" />`,
+        `Now get your api key from the Config Section of <a href="https://hackatime.hackclub.com/settings"> Hackatime's Settings</a> page, and paste it into the Wakatime extension's options menu.
+        <div class="flex justify-center gap-4 mb-4 mt-4">
+                <img src="/hackatime_settings.png" alt="Hackatime Settings" class="rounded-2xl" style="max-width: 300px;" />
+                <p class="transform translate-y-20">-></p>
+                <img src="/wakaoptions.png" alt="Wakatime Options Menu" class="rounded-2xl" style="max-width: 300px;" />
+        </div>`,
+        `<h1 class="text-4xl mb-4">Change the Logging Style to Only Allowed Sites, and choose to include https://armed.hackclub.com</h1>
+        <img src="/wakaoptions.png" alt="Wakatime Options Menu" class="rounded-2xl transform translate-x-80" style="max-width: 300px;" />`,
+        `<h1 class="text-4xl mb-4">Finally, enter this API URL: https://hackatime.hackclub.com/api/hackatime/v1 and click save!</h1>
+        <img src="/wakaoptions2.png" alt="Extensions" class="rounded-2xl mt-4 transform translate-x-50" style="max-width: 300px;" />
+        <p>All done!</p>
+            `,
+            
     ];
 
     function nextStep() {
