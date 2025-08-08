@@ -127,31 +127,84 @@
         stopwatch.reset();
         displayTime = stopwatch.getFormattedTime();
     }
+
+    // Tutorial for Hackatime setup
+    let currentStep = $state(0);
+    
+    const steps = [
+        `<h1 class="text-4xl  mb-4">New Hackatime Setup Required</h1>
+            <p class="text-white mb-4">Please install and configure it before using the editor.</p>`,
+         `<h1 class="text-4xl mb-4">You need to install the </h1><p><a href="https://wakatime.com/chrome" class="text-fuchsia-400 hover:underline"> Wakatime Browser extension. </a> </p>`,
+        `<h1 class="text-4xl mb-4">After installing the extension, you need to configure it.</h1>
+            <p class="text-white mb-4">Click the extensions button, and then click the wakatime icon.</p>`,
+    ];
+
+    function nextStep() {
+        if (currentStep < steps.length - 1) {
+            currentStep++;
+        }
+    }
+
+    function prevStep() {
+        if (currentStep > 0) {
+            currentStep--;
+        }
+    }
 </script>
-<div class="min-h-screen flex justify-center items-center p-8 relative z-10">
+<div class="min-h-screen flex justify-center items-center p-8 relative z-10 overflow-hidden">
     {#if showTutorial}
         <!-- Tutorial placeholder -->
         <div class="text-center">
-            <h1 class="text-4xl text-fuchsia-400 mb-4">Tutorial Required</h1>
-            <p class="text-white mb-4">Please complete the tutorial before using the editor.</p>
-            <button onclick={completeTutorial} class="px-6 py-2 bg-fuchsia-600 hover:bg-fuchsia-700 text-white rounded">
+            <div class="max-w-4xl text-center mb-8">
+            {@html steps[currentStep]}
+            </div>
+            <button onclick={completeTutorial} class="absolute top-5 right-10 hover:text-white hover:underline hover:cursor-pointer rounded">
                 Skip Tutorial
             </button>
+            <button 
+                onclick={prevStep} 
+                disabled={currentStep === 0}
+                class="px-6 py-2 text-fuchsia-400   hover:text-white hover:cursor-pointer hover:underline  disabled:cursor-not-allowed"
+            >
+                Previous
+            </button>
+            
+            <span class="px-4 py-2 z-50 no-blink">
+                {currentStep + 1} / {steps.length}
+            </span>
+            {#if currentStep < steps.length - 1}
+                <button 
+                onclick={nextStep} 
+                class="px-6 py-2 text-fuchsia-600  hover:cursor-pointer hover:underline hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+                Next
+            </button>
+            {:else}
+            
+                <button 
+                    class="px-6 py-2 text-fuchsia-600  hover:cursor-pointer hover:underline hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                    onclick={completeTutorial}
+                    >
+                    Continue
+                </button>
+    
+            {/if}
         </div>
     {:else}
         {#if easyMode}
         <div class="w-full max-w-4xl relative z-20">
             <iframe 
                 src="https://www.peterhigginson.co.uk/AQA/?F5=06-Aug-25_17:58:56" 
-                class="w-full h-[900px] border-2 border-fuchsia-800 rounded-lg relative z-30" 
+                class="w-full h-[700px] border-2 border-fuchsia-800 rounded-lg relative z-30" 
                 title="ArmLite"
                 allow="fullscreen"
                 loading="lazy"
+                style="transform-origin: center; transform: scale(0.9);"
             ></iframe>
             
             <!-- Buttons positioned below iframe container -->
-            <div class="mt-4 relative z-40">
-                <div class="flex flex-wrap gap-4 justify-between items-center">
+            <div class="mt-0 relative z-40">
+                <div class="flex flex-wrap gap-0 justify-between items-center">
                     <div class="flex gap-4">
                         <a href="https://submit.hackclub.com/armed">
                             <button class="hover:underline">
@@ -184,7 +237,7 @@
                     </div>
 
 
-                <h1 class="mt-2 underline text-m justify-center">Remember to Save your code as a .txt file using the save button, also screenshot the page and it's timer</h1>
+                <h1 class="mt-2 underline text-m justify-center">Remember to Save your code as a .txt file using the save button and screenshot the page</h1>
                 </div>
             </div>
         </div>
@@ -192,15 +245,16 @@
         <div class="w-full max-w-8xl relative z-20">
             <iframe 
                 src="https://peterhigginson.co.uk/ARMlite/" 
-                class="w-full h-[800px] border-2 border-fuchsia-800 rounded-lg relative z-30" 
+                class="w-full h-[700px] border-2 border-fuchsia-800 rounded-lg relative z-30" 
                 title="ArmLite"
                 allow="fullscreen"
                 loading="lazy"
+                style=" transform: scale(1);"
             ></iframe>
             
             <!-- Buttons positioned below iframe container -->
-            <div class="mt-4 relative z-40">
-                <div class="flex flex-wrap gap-4 justify-between items-center">
+            <div class="mt-0 relative z-40">
+                <div class="flex flex-wrap gap-1 justify-between items-center">
                     <div class="flex gap-4">
                         <a href="https://submit.hackclub.com/armed">
                             <button class="hover:underline">
@@ -214,7 +268,7 @@
                         </a>
                     </div>
                     
-                    <div class="flex gap-4 items-center">
+                    <div class="flex gap-2 items-center">
                         <div class="text-white">{displayTime}</div>
                         <button onclick={startStopwatch} class="hover:underline hover:text-white">[ Start ]</button>
                         <button onclick={stopStopwatch} class="hover:underline hover:text-white">[ Stop ]</button>
@@ -233,7 +287,7 @@
                     </div>
                 </div>
                 
-                <h1 class="mt-2 underline text-xl text-white">Remember to Save your code as a .txt file using the save button, also screenshot the page and it's timer</h1>
+                <h1 class="mt-1 underline text-xl text-white">Remember to Save your code as a .txt file using the save button and screenshot the page</h1>
             </div>
         </div>
         {/if}

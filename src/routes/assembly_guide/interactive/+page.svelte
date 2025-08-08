@@ -2,89 +2,89 @@
     let currentStep = $state(0);
     
     const steps = [
-         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl"> To start us off,
+         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg"> To start us off,
              this is the editor we'll be using, 
              it's called <a href="https://peterhigginson.co.uk/ARMlite/" 
              class="p hover:underline hover:text-fuchsia-800">ArmLite</a> 
              </p>`,
 
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl"> There are a few main 
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg"> There are a few main 
             parts of the editor, in the middle are 
             the registers, labelled R0-R12, to the right is the memory, 
             and to the left is the program editor.
             </p>`,
             
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg">
             Think of the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">registers</b> as the CPU's workspace,
             they hold the data that the CPU is currently working on,
             and can be used to hold temporary values.
             </p>`,
 
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg">
             In contrast, the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Memory</b> is like the notes app of the CPU,
             it holds data that the CPU doesn't need right now,
             and can be used to store larger amounts of data,
             such as complex variables that aren't currently in use.
             </p>`,
 
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg">
             You also might have noticed a few unusual registers, like the ones labelled
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">PC</b>, 
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">LR</b>, and 
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">SP</b>.
             </p>`,
 
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg">
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">PC</b> stands for the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Program Counter</b>,
             it holds the address of the next instruction to be executed
             </p>`,
 
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg">
             Wait, but that's interesting, I thought that the Memory was where my variable data was stored?
             </p>`,
 
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg">
             Well yes it is, but modern computers follow the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Von Neumann</b> architecture,
             which means that the program code is stored in the same memory as the data,
             and is not physically seperate in any way.
             </p>`,
 
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-base">
             This architecture is helpful due to its <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">simplicity</b> 
             and <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">efficiency</b>,
             as it allows the CPU to access both the program code and data from the same memory space
             without needing to switch between different memory areas.
             </p>`,
 
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-base">
             However, it also means that downloaded data can be executed as code,
             which can lead to <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">security vulnerabilities</b>
             if not handled properly.
             </p>`,
 
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg">
             But going back, the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">
             LR</b> is the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Link Register</b>
             which holds the return address for function calls.
             </p>`,
 
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg">
             And the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">
             SP</b> is the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Stack Pointer</b>
             which points to the top of the CPU's function call stack that consists of stack frames.
             </p>`,
         
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg">
             The <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Program Editor</b> is where you write your code,
             it's where you'll be spending most of your time. To edit, scroll down in the window and click <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Edit</b>
             </p>`,
         
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg">
             To start us off we're going to look at the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">MOV</b>
             instruction.
             </p>`,
 
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg">
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">MOV</b> is used to
             assign values to registers, for example
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">MOV R0, #5</b>
@@ -93,14 +93,14 @@
             Enter that into the editor.
             </p>`,
 
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg">
             Now, if you press <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">submit</b>, press <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">play</b>, 
             and look at the registers, you'll see that <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">R0</b>
             now has <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">5</b> in it.-- It may be in binary or hex, 
             you can change this in the bottom right.
             </p> `,
         
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg">
             Now, let's look at the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">ADD</b> instruction.
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">ADD</b> is used to add two values together,
             for example <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">ADD R0, R0, #5</b>
@@ -111,7 +111,7 @@
             should be <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">10</b>.
             </p>`,
 
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg">
             Likewise <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">SUB</b> is used to subtract two values,
             for example <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">SUB R0, R0, #5</b>
             will subtract the value in <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">5</b> from 
@@ -121,12 +121,12 @@
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">5</b> again.
             </p>`,
 
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg">
             Lastly, we're going to look at branching
             and selection statements.
             </p>`,
         
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg">
             Branching is done using the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">B</b> instruction,
             which stands for branch.
             It allows you to jump to a different part of your code based on a condition.
@@ -134,7 +134,7 @@
             You can create a label by writing <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">LABEL:</b> on a new line.
             </p>`,
         
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg">
             You can also use conditional branching with instructions like 
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">BEQ</b> (branch if equal) 
             and <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">BNE</b> (branch if not equal).
@@ -143,12 +143,12 @@
             if the zero flag is set, indicating that the last comparison was equal.
             </p>`,
 
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg">
             To set the zero flag, you need to compare two values, to do this you can use the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">CMP</b> instruction.
             E.G <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">CMP R0, #5</b> will compare the value in <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">R0</b> to <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">5</b>, and set the zero flag if they are equal.
             </p>`,
 
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg">
             Finally, you can save your project as a .txt file by 
             clicking the <b class="text-stone-300 drop-shadow-stone-500
              drop-shadow-xl">Save</b> button, and you can load 
@@ -157,7 +157,7 @@
              need to upload one of these <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">.txt</b> files.
             </p>`,
 
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg">
             And that's it for the basics, 
             we're now going to move on to some more advanced stuff
             </p>`
@@ -189,11 +189,11 @@
 </style>
 <div class="assembly-guide">
     <div class="min-h-screen flex flex-col justify-center items-center p-8 instant-text">
-        <div class="max-w-4xl text-center mb-8">
+        <div class="max-w-4xl text-center mb-0.5">
             {@html steps[currentStep]}
         </div>
 
-        <div class="w-full max-w-7xl h-[700px]">
+        <div class="w-full max-w-7xl h-[650px]">
             <iframe 
                 src="https://peterhigginson.co.uk/ARMlite/" 
                 class="w-full h-full border-2 border-fuchsia-800 rounded-lg" 
@@ -204,7 +204,7 @@
             ></iframe>
         </div>
         
-        <div class="flex gap-4 mt-8">
+        <div class="flex gap-1">
             <button 
                 onclick={prevStep} 
                 disabled={currentStep === 0}
