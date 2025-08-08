@@ -42,6 +42,7 @@
 {#if mobileDevice}
 	<div class="epilepsy-warning">
 		<p><b>Warning:</b> <u>This site is not optimized for mobile devices. For the best experience, please use a desktop or laptop computer.</u></p>
+		<p> If you are on desktop and you see this, press <b class>CTRL and -</b> , until it dissapears, or on MAC press CMD and -</p>
 	</div>
 {:else}
 	{#if epilepsyWarning}

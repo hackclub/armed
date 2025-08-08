@@ -1,9 +1,55 @@
 <script>
+    import { onMount } from 'svelte';
+    
     let easyMode = $state(false);
+    let tutorial = $state(false);
+    let showTutorial = $state(false);
 
     function toggleEasyMode() {
         easyMode = !easyMode;
     }
+
+    function completeTutorial() {
+        tutorial = true;
+        markTutorialCompleted();
+    }
+
+    // Cookie functions
+    function setCookie(name, value, days = 365) {
+        const expires = new Date();
+        expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+        document.cookie = `${name}=${value}; expires=${expires.toUTCString()}; path=/; SameSite=Strict`;
+    }
+
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    function hasCompletedTutorial() {
+        const completed = getCookie('tutorialCompleted');
+        return completed === 'true';
+    }
+
+    function markTutorialCompleted() {
+        setCookie('tutorialCompleted', 'true');
+        showTutorial = false;
+    }
+
+    function shouldShowTutorial() {
+        return !hasCompletedTutorial();
+    }
+
+    // Initialize tutorial state on mount
+    onMount(() => {
+        showTutorial = shouldShowTutorial();
+    });
 
     class StopwatchAPI {
         constructor() {
@@ -83,7 +129,17 @@
     }
 </script>
 <div class="min-h-screen flex justify-center items-center p-8 relative z-10">
-    {#if easyMode}
+    {#if showTutorial}
+        <!-- Tutorial placeholder -->
+        <div class="text-center">
+            <h1 class="text-4xl text-fuchsia-400 mb-4">Tutorial Required</h1>
+            <p class="text-white mb-4">Please complete the tutorial before using the editor.</p>
+            <button onclick={completeTutorial} class="px-6 py-2 bg-fuchsia-600 hover:bg-fuchsia-700 text-white rounded">
+                Skip Tutorial
+            </button>
+        </div>
+    {:else}
+        {#if easyMode}
         <div class="w-full max-w-4xl relative z-20">
             <iframe 
                 src="https://www.peterhigginson.co.uk/AQA/?F5=06-Aug-25_17:58:56" 
@@ -180,5 +236,6 @@
                 <h1 class="mt-2 underline text-xl text-white">Remember to Save your code as a .txt file using the save button, also screenshot the page and it's timer</h1>
             </div>
         </div>
+        {/if}
     {/if}
 </div>

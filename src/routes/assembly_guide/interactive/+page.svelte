@@ -87,7 +87,7 @@
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">MOV</b> is used to
             assign values to registers, for example
-            <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">MOV R0, 5</b>
+            <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">MOV R0, #5</b>
             will assign the value <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">5</b> to 
             the register <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">R0</b>. 
             Enter that into the editor.
@@ -103,7 +103,7 @@
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             Now, let's look at the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">ADD</b> instruction.
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">ADD</b> is used to add two values together,
-            for example <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">ADD R0, R0, 5</b>
+            for example <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">ADD R0, R0, #5</b>
             will add the value in <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">R0</b> to 
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">5</b> and store the result in 
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">R0</b>.
@@ -113,7 +113,7 @@
 
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
             Likewise <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">SUB</b> is used to subtract two values,
-            for example <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">SUB R0, R0, 5</b>
+            for example <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">SUB R0, R0, #5</b>
             will subtract the value in <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">5</b> from 
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">R0</b> and store the result in 
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">R0</b>.
@@ -130,7 +130,7 @@
             Branching is done using the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">B</b> instruction,
             which stands for branch.
             It allows you to jump to a different part of your code based on a condition.
-            For example, <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">B LABEL</b> will jump to the line labelled <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">LABEL</b>.
+            For example, <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">B LABEL</b> will jump to the line labelled <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">LABEL:</b>.
             You can create a label by writing <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">LABEL:</b> on a new line.
             </p>`,
         
@@ -139,8 +139,13 @@
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">BEQ</b> (branch if equal) 
             and <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">BNE</b> (branch if not equal).
             These instructions check the status of the zero flag, which is set by previous arithmetic operations.
-            For example, <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">BEQ LABEL</b> will jump to <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">LABEL</b>
+            For example, <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">BEQ LABEL</b> will jump to <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">LABEL:</b>
             if the zero flag is set, indicating that the last comparison was equal.
+            </p>`,
+
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
+            To set the zero flag, you need to compare two values, to do this you can use the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">CMP</b> instruction.
+            E.G <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">CMP R0, #5</b> will compare the value in <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">R0</b> to <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">5</b>, and set the zero flag if they are equal.
             </p>`,
 
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
