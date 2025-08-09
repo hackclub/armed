@@ -13,11 +13,11 @@
 ⠀⠀⠀⠀⢀⣼⣿⡿⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢿⣿⣧⡀<br>
 ⠀⠀⠀⢀⣾⣿⣿⡇⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⢸⣿⣿⣷.⠀⠀⠀- Minifigures are awarded at a rate of 1 Minifigure per hour<br>
 ⠀⠀⠀⣼⣿⣿⣿⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⣿⣿⣿⣧⠀⠀⠀⠀⠀of development.<br>
-⠀⠀⣸⣿⣿⣿⡏⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢹⣿⣿⣿⣇⠀⠀- Once you submit your project, you will receive your Minifigures<br>
-⠀⠀⣿⣿⣿⣿⠇⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠸⣿⣿⣿⣿⠀⠀⠀⠀based on the median hours logged by all participants.<br>
-⠀⠀⣿⣿⣿⡿⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⢿⣿⣿⣿⠀⠀- We may award more or less Minifigures at will, based on<br>
-⠀⣠⣿⣿⣿⡇⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⢸⣿⣿⣿⣄⠀⠀⠀our judgment of your project.<br>
-⣾⡿⠋⠉⢻⣷⡀⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⢀⣾⡟⠉⠙⢿⣷- Minifigures may have spare arms included.<br>
+⠀⠀⣸⣿⣿⣿⡏⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢹⣿⣿⣿⣇⠀⠀- If you get 4 hours or more, you get a full lego set instead <br>
+⠀⠀⣿⣿⣿⣿⠇⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠸⣿⣿⣿⣿⠀⠀- Once you submit your project, you will receive your Minifigures<br>
+⠀⠀⣿⣿⣿⡿⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⢿⣿⣿⣿⠀⠀⠀⠀based on the hours logged by you.<br>
+⠀⣠⣿⣿⣿⡇⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⢸⣿⣿⣿⣄⠀- Minifigures may have spare arms included.<br>
+⣾⡿⠋⠉⢻⣷⡀⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⢀⣾⡟⠉⠙⢿⣷
 ⢿⡇⠀⠀⢸⣿⠁⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠈⣿⡇⠀⠀⢸⡿<br>
 ⠀⠀⠀⠀⠛⠁⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠈⠛<br>
 ⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿<br>
