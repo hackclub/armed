@@ -17,7 +17,7 @@
 ⠀⠀⣿⣿⣿⣿⠇⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠸⣿⣿⣿⣿⠀⠀- Once you submit your project, you will receive your Minifigures<br>
 ⠀⠀⣿⣿⣿⡿⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⢿⣿⣿⣿⠀⠀⠀⠀based on the hours logged by you.<br>
 ⠀⣠⣿⣿⣿⡇⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⢸⣿⣿⣿⣄⠀- Minifigures may have spare arms included.<br>
-⣾⡿⠋⠉⢻⣷⡀⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⢀⣾⡟⠉⠙⢿⣷
+⣾⡿⠋⠉⢻⣷⡀⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⢀⣾⡟⠉⠙⢿⣷ <br>
 ⢿⡇⠀⠀⢸⣿⠁⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠈⣿⡇⠀⠀⢸⡿<br>
 ⠀⠀⠀⠀⠛⠁⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠈⠛<br>
 ⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿<br>
