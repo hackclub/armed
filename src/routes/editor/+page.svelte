@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import { onMount } from 'svelte';
     
     let easyMode = $state(false);
@@ -172,6 +172,40 @@
             currentStep--;
         }
     }
+
+    let iframeModified = $state(false);
+    let windowHeight = $state(700);
+    let windowWidth = $state(1200);
+
+     function checkWindowHeight() {
+        if (typeof window !== 'undefined') {
+            iframeModified = window.innerHeight <= 800;
+            if (iframeModified===true) {
+                windowHeight = window.innerHeight * 0.8; // Adjust height for smaller screens
+                windowWidth = window.innerWidth*0.94; // Adjust width for smaller screens
+            } else {
+                windowHeight = 700; // Default height for larger screens
+                windowWidth = 1400; // Default width for larger screens
+            }
+        }
+    }
+    
+    onMount(() => {
+        windowHeight = window.innerHeight;
+        windowWidth = window.innerWidth;
+        
+        const handleResize = () => {
+            windowHeight = window.innerHeight;
+            windowWidth = window.innerWidth;
+            checkWindowHeight();
+        };
+        
+        window.addEventListener('resize', handleResize);
+        
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    });
 </script>
 <div class="min-h-screen flex justify-center items-center p-8 relative z-10 overflow-hidden">
     {#if showTutorial}
@@ -215,6 +249,16 @@
     {:else}
         {#if easyMode}
         <div class="w-full max-w-4xl relative z-20">
+            {#if iframeModified}
+            <iframe 
+                src="https://www.peterhigginson.co.uk/AQA/?F5=06-Aug-25_17:58:56" 
+                class="border-2 border-fuchsia-800 rounded-lg relative z-30" 
+                style="height: {windowHeight}px; transform-origin: center; transform: scale(0.9); width: {windowWidth}px;"
+                title="ArmLite"
+                allow="fullscreen"
+                loading="lazy"
+            ></iframe>
+            {:else}
             <iframe 
                 src="https://www.peterhigginson.co.uk/AQA/?F5=06-Aug-25_17:58:56" 
                 class="w-full h-[700px] border-2 border-fuchsia-800 rounded-lg relative z-30" 
@@ -223,7 +267,7 @@
                 loading="lazy"
                 style="transform-origin: center; transform: scale(0.9);"
             ></iframe>
-            
+            {/if}
             <!-- Buttons positioned below iframe container -->
             <div class="mt-0 relative z-40">
                 <div class="flex flex-wrap gap-0 justify-between items-center">
@@ -259,21 +303,31 @@
                     </div>
 
 
-                <h1 class="mt-2 underline text-m justify-center">Remember to Save your code as a .txt file using the save button and screenshot the page</h1>
+                <h1 class="mt-2 underline text-m justify-center">Remember to Save your code as a .txt file using the save button and screenshot the page, If you have scaling issues zoom out (ctrl/cmd -)</h1>
                 </div>
             </div>
         </div>
     {:else}
         <div class="w-full max-w-8xl relative z-20">
+            {#if iframeModified}
             <iframe 
                 src="https://peterhigginson.co.uk/ARMlite/" 
-                class="w-full h-[700px] border-2 border-fuchsia-800 rounded-lg relative z-30" 
+                class=" border-2 border-fuchsia-800 rounded-lg relative z-30" 
+                style="height: {windowHeight}px; transform: scale(1); width: {windowWidth}px;"
                 title="ArmLite"
                 allow="fullscreen"
                 loading="lazy"
-                style=" transform: scale(1);"
             ></iframe>
-            
+            {:else}
+            <iframe 
+                src="https://peterhigginson.co.uk/ARMlite/" 
+                class="w-full border-2 border-fuchsia-800 rounded-lg relative z-30" 
+                style="height: 700px; transform: scale(1);"
+                title="ArmLite"
+                allow="fullscreen"
+                loading="lazy"
+            ></iframe>
+            {/if}
             <!-- Buttons positioned below iframe container -->
             <div class="mt-0 relative z-40">
                 <div class="flex flex-wrap gap-1 justify-between items-center">
@@ -309,7 +363,7 @@
                     </div>
                 </div>
                 
-                <h1 class="mt-1 underline text-xl text-white">Remember to Save your code as a .txt file using the save button and screenshot the page</h1>
+                <h1 class="mt-1 underline text-xl text-white">Remember to Save your code as a .txt file using the save button and screenshot the page, If you have scaling issues zoom out (ctrl/cmd -)</h1>
             </div>
         </div>
         {/if}
