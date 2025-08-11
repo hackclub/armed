@@ -14,7 +14,7 @@
 
     function checkWindowSize() {
         if (typeof window !== 'undefined') {
-            mobileDevice = window.innerWidth <= 1486;
+            mobileDevice = window.innerWidth <= (0.9 * 1486);
         }
     }
 
