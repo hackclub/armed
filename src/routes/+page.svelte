@@ -35,8 +35,8 @@
     <h2>--------------------- FAQs ----------------------</h2>
     <p><b>[ <span class="no-blink" style="color: white;">0. How do I track hours?</span> ]</b></p>
     <p> You can track hours with Hackatime, also take a screenshot, and remember to save your .txt file when you finish a coding session.</p>
-    <p><b>[ <span class="no-blink" style="color: white;">1. What is ARM?</span> ]</b></p>
-    <p> ARM is a CPU architecture designed for efficiency and performance, found in almost all mobile devices, bar some laptops.</p>
+    <p><b>[ <span class="no-blink" style="color: white;">1. What is ARMed?</span> ]</b></p>
+    <p> ARMed is a Hack Club YSWS where you ship an ARM assembly program, and we ship you lego.</p>
     <p><b>[ <span class="no-blink" style="color: white;">2. What are the prizes?</span> ]</b></p>
     <p> The prizes are Lego Minifigures, and maybe some extra arms.</p>
     <p><b>[ <span class="no-blink" style="color: white;">3. When does this end?</span> ]</b></p>
