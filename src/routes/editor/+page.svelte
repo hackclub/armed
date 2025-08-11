@@ -152,9 +152,9 @@
                 <p class="transform translate-y-20">-></p>
                 <img src="/wakaoptions.png" alt="Wakatime Options Menu" class="rounded-2xl" style="max-width: 300px;" />
         </div>`,
-        `<h1 class="text-4xl mb-4">Change the Logging Style to Only Allowed Sites, and choose to include https://armed.hackclub.com</h1>
+        `<h1 class="text-4xl mb-4">Change the Logging Style to Only Allowed Sites, and choose to include <span class="text-white no-blink">https://armed.hackclub.com</span></h1>
         <img src="/wakaoptions.png" alt="Wakatime Options Menu" class="rounded-2xl transform translate-x-80" style="max-width: 300px;" />`,
-        `<h1 class="text-4xl mb-4">Finally, enter this API URL: https://hackatime.hackclub.com/api/hackatime/v1 and click save!</h1>
+        `<h1 class="text-4xl mb-4">Finally, enter this API URL: <span class="text-white z-10 no-blink">https://hackatime.hackclub.com/api/hackatime/v1</span> and click save!</h1>
         <img src="/wakaoptions2.png" alt="Extensions" class="rounded-2xl mt-4 transform translate-x-50" style="max-width: 300px;" />
         <p>All done!</p>
             `,
