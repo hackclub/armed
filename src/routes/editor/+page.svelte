@@ -1,22 +1,13 @@
-<script lang="ts">
+<script>
     import { onMount } from 'svelte';
     
     let easyMode = $state(false);
     let tutorial = $state(false);
     let showTutorial = $state(false);
-    let currentTutorialStep = $state("");
 
-    const Steps = [
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
-            Welcome to the ARM Assembly Editor! This guide will help you get started.
-        </p>`,
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
-            First, let's load a sample project. Type <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">demo</b> into the editor and press <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Submit</b>.
-        </p>`,
-        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl">
-            This will load a project that demonstrates various ARM Assembly concepts.
-        </p>`,
-    ];
+    function toggleEasyMode() {
+        easyMode = !easyMode;
+    }
 
     function completeTutorial() {
         tutorial = true;
@@ -24,13 +15,13 @@
     }
 
     // Cookie functions
-    function setCookie(name: string, value: string, days: number = 365) {
+    function setCookie(name, value, days = 365) {
         const expires = new Date();
         expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
         document.cookie = `${name}=${value}; expires=${expires.toUTCString()}; path=/; SameSite=Strict`;
     }
 
-    function getCookie(name: string): string | null {
+    function getCookie(name) {
         const nameEQ = name + "=";
         const ca = document.cookie.split(';');
         for (let i = 0; i < ca.length; i++) {
@@ -41,7 +32,7 @@
         return null;
     }
 
-    function hasCompletedTutorial(): boolean {
+    function hasCompletedTutorial() {
         const completed = getCookie('tutorialCompleted');
         return completed === 'true';
     }
@@ -51,7 +42,7 @@
         showTutorial = false;
     }
 
-    function shouldShowTutorial(): boolean {
+    function shouldShowTutorial() {
         return !hasCompletedTutorial();
     }
 
@@ -59,10 +50,6 @@
     onMount(() => {
         showTutorial = shouldShowTutorial();
     });
-
-    function toggleEasyMode() {
-        easyMode = !easyMode;
-    }
 
     class StopwatchAPI {
         constructor() {
@@ -141,55 +128,105 @@
         displayTime = stopwatch.getFormattedTime();
     }
 
-    function handleKeydown(event: KeyboardEvent) {
-        console.log("Key pressed:", event.key);
-        // Add your keydown logic here
-        if (event.key === ' ') { // Spacebar example
-            event.preventDefault();
-            if (stopwatch.isActive()) {
-                stopStopwatch();
-            } else {
-                startStopwatch();
-            }
-        } else if (event.key === 'r' || event.key === 'R') {
-            event.preventDefault();
-            resetStopwatch();
+    // Tutorial for Hackatime setup
+    let currentStep = $state(0);
+    
+    const steps = [
+        `<h1 class="text-4xl  mb-4">New Hackatime Setup Required</h1>
+            <p class="text-white mb-4">Please install and configure it before using the editor.</p>`,
+        `<h1 class="text-4xl mb-4">This guide assumes you have Hackatime setup</h1>
+            <p class="text-white mb-4">If you don't have it setup, click <a href="https://hackatime.hackclub.com/">here</a></p>`,
+         `<h1 class="text-4xl mb-4">You need to install the </h1><p><a href="https://wakatime.com/chrome" class="text-fuchsia-400 hover:underline"> Wakatime Browser extension. </a> </p>`,
+        `<h1 class="text-4xl mb-4">After installing the extension, you need to configure it.</h1>
+            <p class="text-white mb-4">Click the extensions button, and then click the wakatime icon.</p>
+            <div class="flex justify-center gap-4 mb-4 mt-4">
+                <img src="/extensions.png" alt="Extensions" class="rounded-2xl" style="max-width: 300px;" />
+                <p class="transform translate-y-20">-></p>
+                <img src="/wakaext.png" alt="Wakatime" class="rounded-2xl" style="max-width: 600px;" />
+            </div>`,
+        `<h1 class="text-4xl mb-4">Open up the options menu.</h1>
+        <img src="/wakamenu.png" alt="Extensions" class="rounded-2xl mt-4" style="max-width: 300px;" />`,
+        `Now get your api key from the Config Section of <a href="https://hackatime.hackclub.com/settings"> Hackatime's Settings</a> page, and paste it into the Wakatime extension's options menu.
+        <div class="flex justify-center gap-4 mb-4 mt-4">
+                <img src="/hackatime_settings.png" alt="Hackatime Settings" class="rounded-2xl" style="max-width: 300px;" />
+                <p class="transform translate-y-20">-></p>
+                <img src="/wakaoptions.png" alt="Wakatime Options Menu" class="rounded-2xl" style="max-width: 300px;" />
+        </div>`,
+        `<h1 class="text-4xl mb-4">Change the Logging Style to Only Allowed Sites, and choose to include https://armed.hackclub.com</h1>
+        <img src="/wakaoptions.png" alt="Wakatime Options Menu" class="rounded-2xl transform translate-x-80" style="max-width: 300px;" />`,
+        `<h1 class="text-4xl mb-4">Finally, enter this API URL: https://hackatime.hackclub.com/api/hackatime/v1 and click save!</h1>
+        <img src="/wakaoptions2.png" alt="Extensions" class="rounded-2xl mt-4 transform translate-x-50" style="max-width: 300px;" />
+        <p>All done!</p>
+            `,
+            
+    ];
+
+    function nextStep() {
+        if (currentStep < steps.length - 1) {
+            currentStep++;
         }
     }
 
-    function handleIframeKeydown(event: KeyboardEvent) {
-        // Forward keydown events to the parent div
-        const parentDiv = document.querySelector('div[role="application"]');
-        if (parentDiv) {
-            parentDiv.dispatchEvent(new KeyboardEvent('keydown', event));
+    function prevStep() {
+        if (currentStep > 0) {
+            currentStep--;
         }
     }
 </script>
-
-<div class="min-h-screen flex justify-center items-center p-8 relative z-10" onkeydown={handleKeydown} tabindex="0" role="application" aria-label="ARM Assembly Editor">
+<div class="min-h-screen flex justify-center items-center p-8 relative z-10 overflow-hidden">
     {#if showTutorial}
         <!-- Tutorial placeholder -->
         <div class="text-center">
-            <h1 class="text-4xl text-fuchsia-600 mb-4">New Hackatime Extension Required</h1>
-            <p class="text-white mb-4">Please complete this guide on how to install and configure it before using the editor.</p>
-            <button onclick={completeTutorial} class="absolute top-5 right-20 px-6 py-2 text-fuchsia-600 hover:text-white rounded hover:underline">
-                Skip Guide
+            <div class="max-w-4xl text-center mb-8">
+            {@html steps[currentStep]}
+            </div>
+            <button onclick={completeTutorial} class="absolute top-5 right-10 hover:text-white hover:underline hover:cursor-pointer rounded">
+                Skip Tutorial
             </button>
+            <button 
+                onclick={prevStep} 
+                disabled={currentStep === 0}
+                class="px-6 py-2 text-fuchsia-400   hover:text-white hover:cursor-pointer hover:underline  disabled:cursor-not-allowed"
+            >
+                Previous
+            </button>
+            
+            <span class="px-4 py-2 z-50 no-blink">
+                {currentStep + 1} / {steps.length}
+            </span>
+            {#if currentStep < steps.length - 1}
+                <button 
+                onclick={nextStep} 
+                class="px-6 py-2 text-fuchsia-600  hover:cursor-pointer hover:underline hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+                Next
+            </button>
+            {:else}
+            
+                <button 
+                    class="px-6 py-2 text-fuchsia-600  hover:cursor-pointer hover:underline hover:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                    onclick={completeTutorial}
+                    >
+                    Continue
+                </button>
+    
+            {/if}
         </div>
     {:else}
         {#if easyMode}
         <div class="w-full max-w-4xl relative z-20">
             <iframe 
                 src="https://www.peterhigginson.co.uk/AQA/?F5=06-Aug-25_17:58:56" 
-                class="w-full h-[900px] border-2 border-fuchsia-800 rounded-lg relative z-30" 
+                class="w-full h-[700px] border-2 border-fuchsia-800 rounded-lg relative z-30" 
                 title="ArmLite"
                 allow="fullscreen"
                 loading="lazy"
+                style="transform-origin: center; transform: scale(0.9);"
             ></iframe>
             
             <!-- Buttons positioned below iframe container -->
-            <div class="mt-4 relative z-40">
-                <div class="flex flex-wrap gap-4 justify-between items-center">
+            <div class="mt-0 relative z-40">
+                <div class="flex flex-wrap gap-0 justify-between items-center">
                     <div class="flex gap-4">
                         <a href="https://submit.hackclub.com/armed">
                             <button class="hover:underline">
@@ -230,17 +267,16 @@
         <div class="w-full max-w-8xl relative z-20">
             <iframe 
                 src="https://peterhigginson.co.uk/ARMlite/" 
-                class="w-full h-[800px] border-2 border-fuchsia-800 rounded-lg relative z-30" 
+                class="w-full h-[700px] border-2 border-fuchsia-800 rounded-lg relative z-30" 
                 title="ArmLite"
                 allow="fullscreen"
                 loading="lazy"
-                onkeydown={handleIframeKeydown}
-                role="editor"
+                style=" transform: scale(1);"
             ></iframe>
             
             <!-- Buttons positioned below iframe container -->
-            <div class="mt-4 relative z-40">
-                <div class="flex flex-wrap gap-4 justify-between items-center">
+            <div class="mt-0 relative z-40">
+                <div class="flex flex-wrap gap-1 justify-between items-center">
                     <div class="flex gap-4">
                         <a href="https://submit.hackclub.com/armed">
                             <button class="hover:underline">
@@ -254,7 +290,7 @@
                         </a>
                     </div>
                     
-                    <div class="flex gap-4 items-center">
+                    <div class="flex gap-2 items-center">
                         <div class="text-white">{displayTime}</div>
                         <button onclick={startStopwatch} class="hover:underline hover:text-white">[ Start ]</button>
                         <button onclick={stopStopwatch} class="hover:underline hover:text-white">[ Stop ]</button>
@@ -273,7 +309,7 @@
                     </div>
                 </div>
                 
-                <h1 class="mt-2 underline text-xl text-white">Remember to Save your code as a .txt file using the save button and screenshot the page</h1>
+                <h1 class="mt-1 underline text-xl text-white">Remember to Save your code as a .txt file using the save button and screenshot the page</h1>
             </div>
         </div>
         {/if}

@@ -34,7 +34,7 @@
     <p class="clear"><br /></p>
     <h2>--------------------- FAQs ----------------------</h2>
     <p><b>[ <span class="no-blink" style="color: white;">0. How do I track hours?</span> ]</b></p>
-    <p> You can track your hours using the built-in timer, just take a screenshot, and remember to save your .txt file when you finish a coding session.</p>
+    <p> You can track hours with Hackatime, also take a screenshot, and remember to save your .txt file when you finish a coding session.</p>
     <p><b>[ <span class="no-blink" style="color: white;">1. What is ARM?</span> ]</b></p>
     <p> ARM is a CPU architecture designed for efficiency and performance, found in almost all mobile devices, bar some laptops.</p>
     <p><b>[ <span class="no-blink" style="color: white;">2. What are the prizes?</span> ]</b></p>
@@ -42,11 +42,8 @@
     <p><b>[ <span class="no-blink" style="color: white;">3. When does this end?</span> ]</b></p>
     <p> This YSWS ends on the 17th of August 2025.</p>
     <p><b>[ <span class="no-blink" style="color: white;">4. How do I submit my project?</span> ]</b></p>
-    <p> You can submit your project by clicking the "Submit" button in the top right corner of the editor, or by going to <a href="https://submit.hackclub.com/armed">submit.hackclub.com/armed</a>.</p>
-    <p> If you're having issues with Identity Verification, send me a dm <a href="https://hackclub.slack.com/team/U0823F39GV8">@AVD</a> on Slack.</p>
+    <p> You can submit your project by clicking the "Submit" button in the top right corner of the editor.</p>
     <p><b>[ <span class="no-blink" style="color: white;">5. How do I get help?</span> ]</b></p>
     <p> You can get help by joining the <a href="https://hackclub.slack.com/archives/C098S1A5ZAT">#armed</a> channel on Slack, checking out the <a href="/assembly_guide">Tutorial</a> page, or by reaching out to me directly <a href="https://hackclub.slack.com/team/U0823F39GV8">@AVD</a></p>
-    <p><b>[ <span class="no-blink" style="color: white;">6. How do I get started?</span> ]</b></p>
-    <p> You can get started by going to the <a href="/assembly_guide">Tutorial</a> or by going to the <a href="/editor">Editor</a></p>
-    {@html content}
+     
   </div>

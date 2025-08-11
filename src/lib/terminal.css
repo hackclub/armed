@@ -61,7 +61,7 @@ body {
   background: #383838;
   color: #de0491;
   font-size: 64.5%;
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-family: 'VT323', Courier;
   height: 100%;
   margin: 0;
@@ -299,7 +299,7 @@ a.button:hover {
 }
 
 .clearfix {
-  overflow: auto;
+  overflow: show;
   zoom: 1;
 }
 
