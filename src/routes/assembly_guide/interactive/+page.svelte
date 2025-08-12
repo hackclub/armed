@@ -129,7 +129,9 @@
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg">
             Branching is done using the <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">B</b> instruction,
             which stands for branch.
-            It allows you to jump to a different part of your code based on a condition.
+            It allows you to jump to a different part of your code based on a condition.</p>`,
+
+            `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg">
             For example, <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">B LABEL</b> will jump to the line labelled <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">LABEL:</b>.
             You can create a label by writing <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">LABEL:</b> on a new line.
             </p>`,
@@ -137,7 +139,8 @@
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg">
             You can also use conditional branching with instructions like 
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">BEQ</b> (branch if equal) 
-            and <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">BNE</b> (branch if not equal).
+            and <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">BNE</b> (branch if not equal).</p>`,
+            `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-3xl text-lg">
             These instructions check the status of the zero flag, which is set by previous arithmetic operations.
             For example, <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">BEQ LABEL</b> will jump to <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">LABEL:</b>
             if the zero flag is set, indicating that the last comparison was equal.

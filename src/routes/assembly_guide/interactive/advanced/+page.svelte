@@ -22,7 +22,8 @@
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-xl">
             The first one is <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Immediate Addressing</b>,
             which is used to load a value directly. Immediate addressing can be used by placing a
-            <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">#</b> symbol before the value.
+            <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">#</b> symbol before the value.</p>`,
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-xl">
             You can see this in line 4 where we add the value 
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">#12288</b> to the
             register <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">R1</b>, and store the result in
@@ -30,7 +31,8 @@
             </p>`,
         `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-xl">
             The next addressing method is <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">Indirect Addressing</b>,
-            which is used to load a value from a memory address stored in a register.
+            which is used to load a value from a memory address stored in a register.</p>`,
+        `<p class="drop-shadow-fuchsia-800 drop-shadow-xl text-xl">
             You can see this in line 6 where the instruction:
             <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl"> STR R12, [R1]</b>
             stores the value in register <b class="text-stone-300 drop-shadow-stone-500 drop-shadow-xl">R12</b> 
