@@ -40,7 +40,7 @@
     <p><b>[ <span class="no-blink" style="color: white;">2. What are the prizes?</span> ]</b></p>
     <p> The prizes are Lego Minifigures, and maybe some extra arms.</p>
     <p><b>[ <span class="no-blink" style="color: white;">3. When does this end?</span> ]</b></p>
-    <p> This YSWS ends on the 1st of September 2025.</p>
+    <p> This YSWS ends on the 10th of September 2025.</p>
     <p><b>[ <span class="no-blink" style="color: white;">4. How do I submit my project?</span> ]</b></p>
     <p> You can submit your project by clicking the "Submit" button in the top right corner of the editor.</p>
     <p><b>[ <span class="no-blink" style="color: white;">5. How do I get help?</span> ]</b></p>
